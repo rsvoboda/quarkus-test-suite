@@ -68,6 +68,7 @@
         <module>security/keycloak-oidc-client</module>
         <module>sql-db/sql-app</module>
         <module>sql-db/multiple-pus</module>
+        <module>super-size/many-extensions</module>
         <module>quarkus-cli</module>
     </modules>
     <dependencyManagement>
