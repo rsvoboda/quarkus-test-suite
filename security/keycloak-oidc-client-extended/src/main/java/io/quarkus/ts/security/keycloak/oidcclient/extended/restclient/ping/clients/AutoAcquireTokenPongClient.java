@@ -10,13 +10,14 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.eclipse.microprofile.rest.client.annotation.RegisterProvider;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import io.quarkus.oidc.client.filter.OidcClientFilter;
+import io.quarkus.oidc.client.reactive.filter.OidcClientRequestReactiveFilter;
 import io.quarkus.ts.security.keycloak.oidcclient.extended.restclient.model.Score;
 
 @RegisterRestClient
-@OidcClientFilter
+@RegisterProvider(OidcClientRequestReactiveFilter.class)
 @Path("/rest-pong")
 public interface AutoAcquireTokenPongClient {
     @GET
