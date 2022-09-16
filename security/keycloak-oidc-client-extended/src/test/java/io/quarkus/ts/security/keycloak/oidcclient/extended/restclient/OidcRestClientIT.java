@@ -10,7 +10,6 @@ import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.scenarios.QuarkusScenario;
-import io.quarkus.test.scenarios.annotations.DisabledOnNative;
 import io.quarkus.ts.security.keycloak.oidcclient.extended.restclient.model.Score;
 import io.restassured.http.ContentType;
 
@@ -44,7 +43,6 @@ public class OidcRestClientIT extends BaseOidcIT {
     }
 
     @Test
-    @DisabledOnNative(reason = "Annotation @ClientHeaderParam not working in Native. Reported by https://github.com/quarkusio/quarkus/issues/13660")
     public void testLookupAuthorization() {
         assertPingEndpoints("rest-lookup-auth");
     }

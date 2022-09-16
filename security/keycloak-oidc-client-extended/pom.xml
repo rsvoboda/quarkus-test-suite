@@ -40,8 +40,8 @@
             <artifactId>quarkus-oidc-token-propagation-reactive</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-authz-client</artifactId>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-keycloak-admin-client-reactive</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus.qe</groupId>
