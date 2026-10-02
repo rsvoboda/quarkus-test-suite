@@ -89,6 +89,8 @@ public class CycloneDxJvmProductCpeIT {
          * "version" : "3.39.3.temporary-redhat-00001",
          * "description" : "Red Hat Build of Quarkus - Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM",
          * "scope" : "excluded",
+         * "cpe" : "cpe:/a:redhat:quarkus:3.40",
+         * "purl" : "pkg:maven/com.redhat.quarkus.platform/quarkus-bom@3.39.3.temporary-redhat-00001?type=pom",
          */
         assertThat(frameworkComponents).size().isEqualTo(1);
         Component quarkusBomComponent = frameworkComponents.get(0);
@@ -99,6 +101,8 @@ public class CycloneDxJvmProductCpeIT {
         assertThat(quarkusBomComponent.getName()).isEqualTo("quarkus-bom");
         assertThat(quarkusBomComponent.getVersion()).isEqualTo(QuarkusProperties.getVersion());
         assertThat(quarkusBomComponent.getDescription()).contains("Build of Quarkus");
+        assertThat(quarkusBomComponent.getCpe()).contains("cpe:/a:redhat:quarkus:");
+        assertThat(quarkusBomComponent.getPurl()).contains("pkg:maven/com.redhat.quarkus.platform/quarkus-bom@");
 
         return frameworkBomRef;
 
